@@ -13,7 +13,7 @@ export function Home() {
         <img src="/icons/map.svg" alt="map icon" />
         <h1>Electoral Districts</h1>
         <div className="search-districts-container">
-          <img src="" alt="search icon" />
+          <img src="/icons/search.svg" alt="search icon" />
           <input
             type="text"
             className="search-input"

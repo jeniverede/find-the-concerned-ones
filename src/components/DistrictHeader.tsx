@@ -18,7 +18,7 @@ export function DistrictHeader() {
         </div>
 
         <div className="search-wahllokal-container">  
-          <img src="/public/icons/search.svg" alt="search icon" />
+          <img src="/icons/search.svg" alt="search icon" />
           <input
             type="text"
             className="search-input"
