@@ -10,7 +10,7 @@ export function Home() {
   return (
     <>
       <div className="page-container">
-        <img src="" alt="map icon" />
+        <img src="/icons/map.svg" alt="map icon" />
         <h1>Electoral Districts</h1>
         <div className="search-districts-container">
           <img src="" alt="search icon" />
