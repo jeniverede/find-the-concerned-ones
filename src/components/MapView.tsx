@@ -5,7 +5,6 @@ export function MapView() {
 
   return (
     <>
-      <p>Map View</p>
       <div className="map-view-container">
         <img src="/images/map-img.png" alt="district-map" />
       </div>

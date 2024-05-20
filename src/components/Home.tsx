@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import "../styles/Home.css";
 
 /* import { SearchInputProps } from "../interfaces/interface" */
@@ -6,6 +7,22 @@ import { HomeMenu } from "../components/HomeMenu";
 
 export function Home() {
   /* create a onChange function here for the search-input */
+
+  const [view, setView] = useState('list');
+  const [searchResults, setSearchResults] = useState<string[]>([]);
+
+  const districts = ["Mitte", "Friedrichshain", "Kreuzberg", "Prenzlauer Berg", "Charlottenburg", "Wilmersdorf", "Spandau", "Steglitz", "Tempelhof", "Neukölln", "Treptow", "Köpenick", "Marzahn", "Hellersdorf", "Lichtenberg", "Reinickendorf"];
+
+  const search = (value: string) => {
+    console.log(value);
+    if (value === "") {
+      setSearchResults([]);
+    } else {
+      setSearchResults(districts.filter((district) =>
+        district.includes(value) || district.toLowerCase().includes(value) || district.toUpperCase().includes(value)
+      ));
+    }
+  }
 
   return (
     <>
@@ -18,11 +35,15 @@ export function Home() {
             type="text"
             className="search-input"
             placeholder="Search for districts"
-            /* value={value}
-            onChange={onChange} */
+            onInput={event => search(event.currentTarget.value)}
+          /* value={value}
+          onChange={onChange} */
           />
+          {searchResults.map((district, index) =>
+            <p key={index}>{district}</p>
+          )}
         </div>
-        <HomeMenu />
+        <HomeMenu view={view} setView={setView} />
       </div>
     </>
   );
